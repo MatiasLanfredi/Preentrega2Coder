@@ -34,14 +34,6 @@ const Header = () => {
         {/*Logo */}
         <Link to={"/"}>
           <div>
-            {/* <FontAwesomeIcon
-              className={`${
-                isActive ? "text-black text-3xl" : "text-white text-3xl"
-              }`}
-              icon={faShirt}
-            /> */}
-            {/* <img className="h-12 w-24 " src={logo} alt="logo incube" /> */}
-
             <img
               className={`${isActive ? "hidden" : "block h-12 w-24"}`}
               src={logo}
@@ -55,7 +47,7 @@ const Header = () => {
           </div>
         </Link>
         <div className="font-semibold tracking-wider flex gap-5 ">
-          <Link to={"/"}>
+          <a href="#aboutus">
             <div
               className={`${
                 isActive ? "text-black text-lg" : "text-white text-lg"
@@ -63,8 +55,8 @@ const Header = () => {
             >
               About Us
             </div>
-          </Link>
-          <Link to={"/"}>
+          </a>
+          <a href="#contact">
             <div
               className={`${
                 isActive ? "text-black text-lg" : "text-white text-lg"
@@ -72,7 +64,7 @@ const Header = () => {
             >
               Contact
             </div>
-          </Link>
+          </a>
         </div>
         {/*Cart */}
         <div
