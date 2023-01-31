@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 //?Import Links
 import { Link } from "react-router-dom";
-//?Import Logo
-import Logo from "../img/logo.svg";
+//?Importlogo
 
+import logo2 from "../img/logotblack.png";
+import logo from "../img/logtnaranja.png";
 const Header = () => {
   //?Header State
   const [isActive, setIsActive] = useState(false);
@@ -29,20 +30,61 @@ const Header = () => {
         isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
       } fixed w-full z-10 transition-all`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full ">
+      <div className="container mx-auto flex items-center justify-between h-full">
         {/*Logo */}
         <Link to={"/"}>
           <div>
-            <img className="w-[40px]" src={Logo} alt="" />
+            {/* <FontAwesomeIcon
+              className={`${
+                isActive ? "text-black text-3xl" : "text-white text-3xl"
+              }`}
+              icon={faShirt}
+            /> */}
+            {/* <img className="h-12 w-24 " src={logo} alt="logo incube" /> */}
+
+            <img
+              className={`${isActive ? "hidden" : "block h-12 w-24"}`}
+              src={logo}
+              alt="logo incube"
+            ></img>
+            <img
+              className={`${isActive ? "block h-12 w-24" : "hidden "}`}
+              src={logo2}
+              alt="logo incube"
+            ></img>
           </div>
         </Link>
-        <Link></Link>
+        <div className="font-semibold tracking-wider flex gap-5 ">
+          <Link to={"/"}>
+            <div
+              className={`${
+                isActive ? "text-black text-lg" : "text-white text-lg"
+              }`}
+            >
+              About Us
+            </div>
+          </Link>
+          <Link to={"/"}>
+            <div
+              className={`${
+                isActive ? "text-black text-lg" : "text-white text-lg"
+              }`}
+            >
+              Contact
+            </div>
+          </Link>
+        </div>
         {/*Cart */}
         <div
           className="cursor-pointer flex relative"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <FontAwesomeIcon className="text-2xl " icon={faBagShopping} />
+          <FontAwesomeIcon
+            className={`${
+              isActive ? "text-black text-2xl" : "text-white text-2xl"
+            }`}
+            icon={faBagShopping}
+          />
           <div className="bg-red-500 p-1 -right-2 bottom-2 text-[12px] h-[18px] absolute text-white rounded-full flex justify-center items-center ">
             {itemAmount}
           </div>
